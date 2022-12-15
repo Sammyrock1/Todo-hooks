@@ -1,8 +1,8 @@
 import { useState}  from 'react';
 
 
- const useInitialVal = () => {
-    const [value,setValue ] = useState("");
+ const useInitialVal = (defaultask)=> {
+    const [ value,setValue, ] = useState(defaultask);
 
      const handleChanges = e => {
        setValue(e.target.value);
