@@ -6,6 +6,7 @@ import Todo from './hooks/Todo';
 
 
 function  TodoList({todos,removeTodo,toggleTodo,editTodo}) {
+  
    if(todos.length) 
    return (
       <Paper>
@@ -13,9 +14,10 @@ function  TodoList({todos,removeTodo,toggleTodo,editTodo}) {
           {todos.map((todo,i) => (
             <div key={`${todo.id}`}>
               <Todo
-                task={todo.task}
-                id={todo.id}
-                completed={todo.completed}
+             {...todo}
+                //  task={todo.task}
+                //  id={todo.id}
+                // completed={todo.completed}
                 toggleTodo={toggleTodo}
                 removeTodo={removeTodo}
                 editTodo={editTodo}
