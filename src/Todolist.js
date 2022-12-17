@@ -6,12 +6,11 @@ import Todo from './hooks/Todo';
 
 
 function  TodoList({todos,removeTodo,toggleTodo,editTodo}) {
-  console.log(todos)
-  
-    return (
+   if(todos.length) 
+   return (
       <Paper>
         <List>
-          {todos.map((todo) => (
+          {todos.map((todo,i) => (
             <div key={`${todo.id}`}>
               <Todo
                 task={todo.task}
@@ -21,12 +20,13 @@ function  TodoList({todos,removeTodo,toggleTodo,editTodo}) {
                 removeTodo={removeTodo}
                 editTodo={editTodo}
               />
-              <Divider />
+             {i < todos.length -1 && <Divider />}
             </div>
           ))}
         </List>
       </Paper>
     );
+    return null;
 
 }
  export default TodoList
